@@ -100,12 +100,18 @@ Within the addNumbers function, invoke the callback function as many times as ne
 Return the modified array.
 ------------------------------------------------------------------------------------------------ */
 
-const addValues = (arr, value) => {
+const addValues = (arr, value) => arr.push(value);
   // Solution code here...
-};
+
+ 
+
 
 const addNumbers = (num, arr, times, callback) => {
   // Solution code here...
+  for (let i = 0; i < times; i++) {
+    callback(arr,num)
+    
+  }return arr
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -128,6 +134,16 @@ This function should use forEach to populate your grocery list based on the stor
 
 const createList = (availableItems) => {
   // Solution code here...
+  const itemArr=[];
+  availableItems.forEach(item=>{
+  if (item.available===true) {
+     itemArr.push(item.name);
+      
+
+     
+     
+    }
+  });return itemArr;
 };
 
 /* ------------------------------------------------------------------------------------------------
