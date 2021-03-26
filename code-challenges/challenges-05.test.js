@@ -38,7 +38,11 @@ CHALLENGE 2
 Write a function named removeThree that takes an index and an array. The function should removes three items in the array starting with the value at the index. 
 ------------------------------------------------------------------------------------------------ */
 
-const removeThree = (idx, arr) => arr.splice(idx,3);
+const removeThree = (idx, arr) =>{
+  arr.splice(idx,3);
+  return arr;
+  
+} 
   
   // Solution code here...
 
@@ -85,7 +89,9 @@ Write a function name wordsToCharList that, given a string as input, returns a n
 For example, wordsToCharList('gregor') returns ['g','r','e','g','o','r'].
 ------------------------------------------------------------------------------------------------ */
 
-const wordsToCharList = (arr) => arr.splite('');
+const wordsToCharList = (arr) =>{
+  return arr.split('');
+};
  
 
   // Solution code here...
@@ -136,8 +142,12 @@ const gruffaloCrumble = {
 const listFoods = (recipe) => {
   let result = [];
   // Solution code here...
+  recipe.ingredients.forEach(element => {
+    let x=element.indexOf(' ',3) + 1;
+    result.push(element.slice(x, element.length));
+    
+  });
 
-  
   return result;
 };
 
@@ -152,6 +162,11 @@ You may also use other string or array methods.
 const splitFoods = (recipe) => {
   let result = [];
   // Solution code here...
+  recipe.ingredients.forEach(element => {
+    result.push(element.split(' ').slice(2).join(' ') );
+  });
+
+  
   return result;
 };
 
@@ -168,6 +183,9 @@ Return a new array containing just the verbs. For example, ['Mix until evenly di
 const stepActions = (recipe) => {
   let result = [];
   // Solution code here...
+  recipe.steps.forEach((element) => {
+    result.push(element.split(' ')[0])
+  });
   return result;
 };
 
@@ -185,8 +203,17 @@ For example:
 ------------------------------------------------------------------------------------------------ */
 
 const removeEvenValues = (arr) => {
+  for (let i = 0; i < arr.length; i++) {
+    
+    if (arr[i] % 2==0) {
+      arr.splice(i,1)
+      i=0;
+    }
+  }
+  
   // Solution code here...
 };
+// work with while
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 10 - Stretch Goal
@@ -302,20 +329,20 @@ describe('Testing challenge 6', () => {
   });
 });
 
-xdescribe('Testing challenge 7', () => {
+describe('Testing challenge 7', () => {
   test('It should return a list of foods', () => {
     expect(splitFoods(gruffaloCrumble)).toStrictEqual(['Gruffalo', 'oats', 'brown sugar', 'flour', 'pure maple syrup', 'chopped nuts', 'baking soda', 'baking powder', 'cinnamon', 'melted butter', 'fresh water']);
   });
 });
 
-xdescribe('Testing challenge 8', () => {
+describe('Testing challenge 8', () => {
   test('It should return a list of recipe steps', () => {
     expect(stepActions(gruffaloCrumble)).toStrictEqual(['Pre-heat', 'De-prickle', 'Sprinkle', 'Mix', 'Grease', 'Combine', 'Fold', 'Spread', 'Bake']);
     expect(stepActions(gruffaloCrumble).length).toStrictEqual(9);
   });
 });
 
-xdescribe('Testing challenge 9', () => {
+describe('Testing challenge 9', () => {
   test('It should remove the even numbers from the array', () => {
     let list = [1, 2, 3, 4, 5, 6];
     removeEvenValues(list);
