@@ -44,7 +44,7 @@ const count = (target, input) => {
   let newArr = input.reduce(function (acc, val) {
     return acc += val.reduce(function (acc2, value) {
       if (target === value) { return acc2 = acc2 + 1; } else { return acc2; }
-    }, 0);
+    }, 0);`
   }, 0);
   return newArr;
 };
