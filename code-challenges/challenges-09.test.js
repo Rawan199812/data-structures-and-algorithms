@@ -50,8 +50,9 @@ Write a function named addPurchases that, given an array of objects as input, us
 ------------------------------------------------------------------------------------------------ */
 
 const addPurchases = (arr) => {
-  return arr.reduce((accumulator, currentValue) => { return accumulator += currentValue.purchasePrice; }, 0);
+  return arr.reduce((accumulator, currentValue) =>  accumulator = accumulator+currentValue.purchasePrice , 0);
 
+ 
   // Solution code here...
 };
 
@@ -64,7 +65,10 @@ Note: You may not use the array's built-in length property.
 ------------------------------------------------------------------------------------------------ */
 
 const countNumberOfElements = (arr) => {
-  { return arr.reduce(counter => counter += 1); };
+  //  return arr.reduce(counter => counter += 1),0 ;
+  return arr.reduce((accumulator, currentValue,i)=>{
+    return i+1
+  },0)
   // Solution code here...
 };
 
@@ -127,10 +131,15 @@ let starWarsData = [{
 
 const returnNames = (arr) => {
   // Solution code here...
-  return arr.reduce((accumulator, currentValue) => {
-    accumulator.push(currentValue.name)
-    return accumulator
-  }, []);
+  // return arr.reduce((accumulator, currentValue) => {
+  //   accumulator.push(currentValue.name)
+  //   return accumulator
+  // }, []);
+  let newArr=[];
+  return arr.reduce((accumulator,currentValue)=>{
+   newArr.push(currentValue.name)
+   return newArr
+  },'')
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -201,6 +210,15 @@ const characters = [
 
 const countNumberOfChildren = (arr) => {
   // Solution code here...
+  let newArr=[];
+  return arr.reduce((accumulator,currentValue)=>{
+    if (currentValue.children) {
+      newArr.push(currentValue.children)
+      
+    }
+    return newArr.length
+
+  })
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -213,6 +231,9 @@ Hint: The accumulator should begin as { count: 0, sum: 0 }
 
 const calculateAverage = (arr) => {
   // Solution code here...
+ 
+ const sum= arr.reduce((accumulator,currentValue,i)=>newArr.push(accumulator+currentValue),0)
+   return sum/arr.length
 };
 
 /* ------------------------------------------------------------------------------------------------

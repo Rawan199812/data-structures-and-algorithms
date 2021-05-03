@@ -1,6 +1,6 @@
-def reverse_list(ll):
-    new=ll[::-1]
-    return new
+def reverseArray(ll):
+
+    return ll[::-1]
 
     """Reverses a linked list
     Args:
