@@ -1,4 +1,4 @@
-from linked_list.linked_list import LinkedList
+from challenges.linked_lists.linked_lists import LinkedList
 
 
 
