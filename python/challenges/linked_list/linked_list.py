@@ -1,3 +1,15 @@
+# class LinkedLists:
+#     """
+#     Put docstring here
+#     """
+
+#     def __init__(self):
+#         # initialization here
+#         pass
+
+#     def some_method(self):
+#         # method body here
+#         pass
 class Node():
 
     def __init__ (self, d, n = None):
@@ -21,6 +33,7 @@ class LinkedList ():
         new_node = Node (d, self.head)
         self.head = new_node
         self.size += 1
+        return new_node.data
 
     def includes (self, d):
         this_node = self.head
@@ -43,11 +56,11 @@ class LinkedList ():
         else:
             return "Your List still empty"
         return saved_data
-myList = LinkedList()
+# myList = LinkedList()
 # myList.insert(5)
 # myList.insert(8)
 # myList.insert(12)
 
-print(myList.includes(5))
-print(myList.includes(3))
-print(myList.__str__())
+# print(myList.includes(5))
+# print(myList.includes(3))
+# print(myList.__str__())
