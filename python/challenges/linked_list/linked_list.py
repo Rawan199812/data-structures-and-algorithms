@@ -54,7 +54,7 @@ class LinkedList ():
                 else:
                     saved_data += "-> NULL"
         else:
-            return "Your List still empty"
+            return "Your Linked List still empty"
         return saved_data
 # myList = LinkedList()
 # myList.insert(5)

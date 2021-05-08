@@ -10,7 +10,7 @@ myList = LinkedList()
 #     assert Node
 
 def test_empty_linked_list():
-    expected = "Your List still empty"
+    expected = "Your Linked List still empty"
     actual = str(LinkedList())
     assert actual == expected
 
@@ -18,7 +18,7 @@ def test_insert_properly():
     actual = myList.insert("12")
     expected = "12"
     assert actual == expected
-
+ 
 def test_head_point_first_node(linked):
     actual = str(linked.head)
     expected = 'Rawan'
