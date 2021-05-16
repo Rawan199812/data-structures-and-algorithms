@@ -42,11 +42,19 @@ def test_find_value_not_exists():
     expected = False
     assert actual == expected
 
+def add_to_the_end():
+    myList.append('test')
+    actual = myList.includes('test')
+    expected = False
+    assert actual == expected
+
 def test_collection_data(linked):
     expected = "{yes} -> {cool} -> {so} -> {12} -> {Rawan} -> NULL"
     actual = str(linked)
     print(actual)
     assert actual == expected
+
+
 @pytest.fixture
 def linked():
     item = LinkedList()

@@ -1,15 +1,3 @@
-# class LinkedLists:
-#     """
-#     Put docstring here
-#     """
-
-#     def __init__(self):
-#         # initialization here
-#         pass
-
-#     def some_method(self):
-#         # method body here
-#         pass
 class Node():
 
     def __init__ (self, d, n = None):
@@ -56,10 +44,51 @@ class LinkedList ():
         else:
             return "Your Linked List still empty"
         return saved_data
+    def append(self,h):
+        new_node = Node(h)
+        current = self.head
+        if not self.head : # check if the list empty so i only have to set the pointer oh the head to the new node
+            self.head = new_node
+            return 
+        while current:# search for the last node that will be point to None 
+            if current.next_node == None:
+                current.next_node = new_node
+                return
+            else:
+                current = current.next_node
+    def insertBefore(self, prev_value, data):
+        new_node = Node(data)
+        current = self.head
+        if current.data == prev_value: #check it the node we wand to insert before is the first node in the list
+              self.insert(data) 
+        else:
+            while current.next_node.data != prev_value:
+                    current = current.next_node
+            else:
+                   new_node.next_node = current.next_node
+                   current = current.next_node
+
+
+    def insertAfter(self,prev_value,data):
+        new_node = Node(data)
+        current = self.head
+        # check if the node we want to insert after is exisit
+        while current: 
+            if current.data == prev_value:
+                new_node.next_node= current.next_node # the pointer for the new node points to the next node of the node we want to insert after
+                current.next_node = new_node
+                return
+            current = current.next_node
+        raise ValueError(f'{prev_value} Previous node is not in the list')
+
 # myList = LinkedList()
 # myList.insert(5)
 # myList.insert(8)
 # myList.insert(12)
+# myList.append(3)
+# myList.insertAfter(5,6)
+# myList.insertBefore(12,4)
+# myList.insertBefore(8,4)
 
 # print(myList.includes(5))
 # print(myList.includes(3))
