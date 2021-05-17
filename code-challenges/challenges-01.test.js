@@ -129,7 +129,7 @@ The inventory is formatted like this:
   { name: 'blueberries', available: false }
 ]
 
-This function should use forEach to populate your grocery list based on the store's inventory. If the item is available, add it to your list. Return the final list.
+This function should use forEach to populate your grocery list based on the store's inventory. If the item is available, add it to your list. Return the final list. 
 ------------------------------------------------------------------------------------------------ */
 
 const createList = (availableItems) => {
@@ -161,7 +161,22 @@ Return the resulting output array.
 ------------------------------------------------------------------------------------------------ */
 
 const fizzbuzz = (arr) => {
+  let newArr=[];
+  arr.forEach(element=>{
+    if (element%3==0) {
+      newArr.push(`Fizz`) 
+    }else if(element%5==0){
+      newArr.push(`Buzz`) 
+    }else if(element%3==0&&element%5==0){
+      newArr.push(`Fizz Buzz`)
+      
+      }else{
+        newArr.push(element) 
+    }
+  })
+  return newArr
   // Solution code here...
+
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -215,7 +230,7 @@ describe('Testing challenge 6', () => {
   });
 });
 
-xdescribe('Testing challenge 7', () => {
+describe('Testing challenge 7', () => {
   const inputs = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16];
 
   test('It should print out messages or numbers', () => {
