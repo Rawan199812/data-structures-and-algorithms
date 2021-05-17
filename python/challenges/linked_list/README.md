@@ -10,3 +10,4 @@ Within LinkedList class, include a head property. Upon instantiation, an empty L
 2. includes method: takes any value as an argument and returns a boolean result depending on whether that value exists as a Node’s value somewhere within the list.
 3.  __str__  method: takes in no arguments and returns a string representing all the values in the Linked List, formatted as:
 "{ a } -> { b } -> { c } -> NULL"
+4. kthFromEnd method : Return node value (k) from the end of the list

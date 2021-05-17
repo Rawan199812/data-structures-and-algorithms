@@ -88,6 +88,22 @@ class LinkedList ():
                 return
             current = current.next_node
         raise ValueError(f'{prev_value} node is not in the list')
+    def kthFromEnd(self, k):
+
+        try:
+                
+            n = -1
+            current = self.head
+            while current:
+                current = current.next_node
+                n = n + 1
+            if n >= k:
+                current = self.head
+                for i in range(n - k):
+                    current = current.next_node
+            return current.data
+        except:
+            return "The Value Not Found"
 
 myList = LinkedList()
 myList.insert(5)
@@ -96,9 +112,9 @@ myList.insert(12)
 myList.append(3)
 # myList.insertAfter(5,6)
 # myList.insertBefore(12,4)
-myList.insertBefore(12,5)
-myList.insertBefore(8,4)
-
+# myList.insertBefore(12,5)
+# myList.insertBefore(8,4)
+print(myList.kthFromEnd(0))
 # print(myList.includes(5))
 # print(myList.includes(3))
 print(myList.__str__())
