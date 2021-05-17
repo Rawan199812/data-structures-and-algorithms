@@ -59,15 +59,23 @@ class LinkedList ():
     def insertBefore(self, prev_value, data):
         new_node = Node(data)
         current = self.head
-        if current.data == prev_value: #check it the node we wand to insert before is the first node in the list
-              self.insert(data) 
-        else:
-            while current.next_node.data != prev_value:
-                    current = current.next_node
-            else:
-                   new_node.next_node = current.next_node
-                   current = current.next_node
+        # if current.data == prev_value: #check it the node we wand to insert before is the first node in the list
+        #       self.insert(data)  (we can call the insert another way)
+        # else:
+        while current:
+                if current.data == prev_value:
+                    new_node.next_node = current
+                    self.head = new_node
+                    return
+                if current.next_node:
+                     if current.next_node== prev_value:
+                           new_node.next_node == current.next_node
+                           current.next_node = new_node
+                           return
+                     current = current.next_node          
 
+                if current.next_node == None:
+                    raise Exception(f'{prev_value} node is not in the list')
 
     def insertAfter(self,prev_value,data):
         new_node = Node(data)
@@ -79,17 +87,18 @@ class LinkedList ():
                 current.next_node = new_node
                 return
             current = current.next_node
-        raise ValueError(f'{prev_value} Previous node is not in the list')
+        raise ValueError(f'{prev_value} node is not in the list')
 
-# myList = LinkedList()
-# myList.insert(5)
-# myList.insert(8)
-# myList.insert(12)
-# myList.append(3)
+myList = LinkedList()
+myList.insert(5)
+myList.insert(8)
+myList.insert(12)
+myList.append(3)
 # myList.insertAfter(5,6)
 # myList.insertBefore(12,4)
-# myList.insertBefore(8,4)
+myList.insertBefore(12,5)
+myList.insertBefore(8,4)
 
 # print(myList.includes(5))
 # print(myList.includes(3))
-# print(myList.__str__())
+print(myList.__str__())

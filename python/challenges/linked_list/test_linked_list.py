@@ -43,8 +43,8 @@ def test_find_value_not_exists():
     assert actual == expected
 
 def add_to_the_end():
-    myList.append('test')
-    actual = myList.includes('test')
+    myList.append('100')
+    actual = myList.includes('100')
     expected = False
     assert actual == expected
 
